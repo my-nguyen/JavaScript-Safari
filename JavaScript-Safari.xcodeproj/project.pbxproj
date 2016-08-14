@@ -12,7 +12,34 @@
 		0FE973911D5FF3C3004EF060 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FE9738F1D5FF3C3004EF060 /* Main.storyboard */; };
 		0FE973931D5FF3C3004EF060 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FE973921D5FF3C3004EF060 /* Assets.xcassets */; };
 		0FE973961D5FF3C3004EF060 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FE973941D5FF3C3004EF060 /* LaunchScreen.storyboard */; };
+		0FE973A41D5FF6F2004EF060 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE973A31D5FF6F2004EF060 /* ActionViewController.swift */; };
+		0FE973A71D5FF6F2004EF060 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FE973A51D5FF6F2004EF060 /* MainInterface.storyboard */; };
+		0FE973AB1D5FF6F2004EF060 /* Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0FE973A11D5FF6F2004EF060 /* Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0FE973A91D5FF6F2004EF060 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0FE973801D5FF3C2004EF060 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0FE973A01D5FF6F2004EF060;
+			remoteInfo = Extension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0FE973AF1D5FF6F2004EF060 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				0FE973AB1D5FF6F2004EF060 /* Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0FE973881D5FF3C2004EF060 /* JavaScript-Safari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JavaScript-Safari.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,10 +49,21 @@
 		0FE973921D5FF3C3004EF060 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0FE973951D5FF3C3004EF060 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0FE973971D5FF3C3004EF060 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0FE973A11D5FF6F2004EF060 /* Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Extension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FE973A31D5FF6F2004EF060 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
+		0FE973A61D5FF6F2004EF060 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		0FE973A81D5FF6F2004EF060 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		0FE973851D5FF3C2004EF060 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FE9739E1D5FF6F2004EF060 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				0FE9738A1D5FF3C2004EF060 /* JavaScript-Safari */,
+				0FE973A21D5FF6F2004EF060 /* Extension */,
 				0FE973891D5FF3C2004EF060 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				0FE973881D5FF3C2004EF060 /* JavaScript-Safari.app */,
+				0FE973A11D5FF6F2004EF060 /* Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -64,6 +104,16 @@
 			path = "JavaScript-Safari";
 			sourceTree = "<group>";
 		};
+		0FE973A21D5FF6F2004EF060 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0FE973A31D5FF6F2004EF060 /* ActionViewController.swift */,
+				0FE973A51D5FF6F2004EF060 /* MainInterface.storyboard */,
+				0FE973A81D5FF6F2004EF060 /* Info.plist */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,15 +124,34 @@
 				0FE973841D5FF3C2004EF060 /* Sources */,
 				0FE973851D5FF3C2004EF060 /* Frameworks */,
 				0FE973861D5FF3C2004EF060 /* Resources */,
+				0FE973AF1D5FF6F2004EF060 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0FE973AA1D5FF6F2004EF060 /* PBXTargetDependency */,
 			);
 			name = "JavaScript-Safari";
 			productName = "JavaScript-Safari";
 			productReference = 0FE973881D5FF3C2004EF060 /* JavaScript-Safari.app */;
 			productType = "com.apple.product-type.application";
+		};
+		0FE973A01D5FF6F2004EF060 /* Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0FE973AC1D5FF6F2004EF060 /* Build configuration list for PBXNativeTarget "Extension" */;
+			buildPhases = (
+				0FE9739D1D5FF6F2004EF060 /* Sources */,
+				0FE9739E1D5FF6F2004EF060 /* Frameworks */,
+				0FE9739F1D5FF6F2004EF060 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Extension;
+			productName = Extension;
+			productReference = 0FE973A11D5FF6F2004EF060 /* Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -95,6 +164,9 @@
 				ORGANIZATIONNAME = "My Nguyen";
 				TargetAttributes = {
 					0FE973871D5FF3C2004EF060 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					0FE973A01D5FF6F2004EF060 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
 				};
@@ -113,6 +185,7 @@
 			projectRoot = "";
 			targets = (
 				0FE973871D5FF3C2004EF060 /* JavaScript-Safari */,
+				0FE973A01D5FF6F2004EF060 /* Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -128,6 +201,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0FE9739F1D5FF6F2004EF060 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FE973A71D5FF6F2004EF060 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -140,7 +221,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0FE9739D1D5FF6F2004EF060 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FE973A41D5FF6F2004EF060 /* ActionViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0FE973AA1D5FF6F2004EF060 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0FE973A01D5FF6F2004EF060 /* Extension */;
+			targetProxy = 0FE973A91D5FF6F2004EF060 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0FE9738F1D5FF3C3004EF060 /* Main.storyboard */ = {
@@ -157,6 +254,14 @@
 				0FE973951D5FF3C3004EF060 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		0FE973A51D5FF6F2004EF060 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0FE973A61D5FF6F2004EF060 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -249,6 +354,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "JavaScript-Safari/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nguyen.JavaScript-Safari";
@@ -260,10 +366,33 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "JavaScript-Safari/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nguyen.JavaScript-Safari";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		0FE973AD1D5FF6F2004EF060 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = Extension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nguyen.JavaScript-Safari.Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		0FE973AE1D5FF6F2004EF060 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = Extension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nguyen.JavaScript-Safari.Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -284,6 +413,14 @@
 			buildConfigurations = (
 				0FE9739B1D5FF3C3004EF060 /* Debug */,
 				0FE9739C1D5FF3C3004EF060 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0FE973AC1D5FF6F2004EF060 /* Build configuration list for PBXNativeTarget "Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FE973AD1D5FF6F2004EF060 /* Debug */,
+				0FE973AE1D5FF6F2004EF060 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
