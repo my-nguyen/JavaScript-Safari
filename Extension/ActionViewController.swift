@@ -25,7 +25,12 @@ class ActionViewController: UIViewController {
                 // fetch an item from the item provider
                 // note the closure which will execute asynchronously
                 itemProvider.loadItemForTypeIdentifier(kUTTypePropertyList as String, options: nil) { [unowned self] (dict, error) in
-                    // do stuff!
+                    // this closure will be called with the data received from the extension together with error
+                    // data received is a dictionary
+                    let itemDictionary = dict as! NSDictionary
+                    // data is what got sent from JavaScript (Action.js) stored inside NSExtensionJavaScriptPreprocessingResultsKey
+                    let javaScriptValues = itemDictionary[NSExtensionJavaScriptPreprocessingResultsKey] as! NSDictionary
+                    print(javaScriptValues)
                 }
             }
         }
