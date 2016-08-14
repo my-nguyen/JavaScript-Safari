@@ -18,6 +18,22 @@ class ActionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        /// in the text view, if you type a lot, the new text will be covered by the iOS keyboard.
+        /// the followings fix that problem
+        // get a reference to the default notification center
+        let notificationCenter = NSNotificationCenter.defaultCenter()
+        // addObserver takes 4 parameters
+        // (1) the object that should receive notifications (self)
+        // (2) the method that should be called
+        // (3) the notification to receive
+        //     UIKeyboardWillHideNotification is sent when the keyboard has finished hiding
+        //     UIKeyboardWillChangeFrameNotification is shown when any keyboard state change happens,
+        //     including showing and hiding, orientation, QuickType, etc
+        // (4) the object to watch (nil means it doesn't matter)
+        notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIKeyboardWillHideNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIKeyboardWillChangeFrameNotification, object: nil)
+
+        // create a UIBarButtonItem and make it call done()
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(done))
 
         // extensionContext allows control over how to interact with the parent app
@@ -71,4 +87,27 @@ class ActionViewController: UIViewController {
         extensionContext!.completeRequestReturningItems([item], completionHandler: nil)
     }
 
+    func adjustForKeyboard(notification: NSNotification) {
+        // extract the userInfo, which is an NSDictionary containing notification-specific information
+        let userInfo = notification.userInfo!
+
+        // with key UIKeyboardFrameEndUserInfoKey, the value is the frame of the keyboard after it has finished animating
+        // typecast this value to an NSValue, then extract the CGRect from it, which is the keyboard frame
+        let keyboardScreenEndFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+        // convert the keyboard frame (CGRect) to the view's coordinates
+        let keyboardViewEndFrame = view.convertRect(keyboardScreenEndFrame, fromView: view.window)
+
+        // adjust the contentInset and scrollIndicatorInsets, to indent the edges of the text view so that
+        // it appears to occupy less space
+        if notification.name == UIKeyboardWillHideNotification {
+            script.contentInset = UIEdgeInsetsZero
+        } else {
+            script.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardViewEndFrame.height, right: 0)
+        }
+        script.scrollIndicatorInsets = script.contentInset
+
+        // make the text view scroll so that the text entry cursor is visible
+        let selectedRange = script.selectedRange
+        script.scrollRangeToVisible(selectedRange)
+    }
 }
