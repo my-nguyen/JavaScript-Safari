@@ -68,7 +68,7 @@ class ActionViewController: UIViewController {
         // place that NSItemProvider into our NSExtensionItem as its attachments
         item.attachments = [customJavaScript]
         // call completeRequestReturningItems(), returning the NSExtensionItem
-        self.extensionContext!.completeRequestReturningItems(self.extensionContext!.inputItems, completionHandler: nil)
+        extensionContext!.completeRequestReturningItems([item], completionHandler: nil)
     }
 
 }
